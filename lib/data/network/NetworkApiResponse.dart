@@ -25,7 +25,7 @@ class NetWorkApiResponse extends BaseApiResponse {
     dynamic ResponseJson;
     try {
       Response response =
-          await post(Uri.parse(url)).timeout(Duration(seconds: 10));
+          await post(Uri.parse(url), body: data).timeout(Duration(seconds: 10));
       ResponseJson = returnResponse(response);
     } on SocketException {
       throw FetchDataException('Data does not found');

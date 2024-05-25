@@ -6,10 +6,11 @@ class AppException implements Exception {
 
   @override
   String toString() {
-    return '$_message';
+    return '$_prefix$_message';
   }
 }
- // when the data is not come or  api request is timeOut
+
+// when the data is not come or  api request is timeOut
 class FetchDataException extends AppException {
   FetchDataException([String? message])
       : super(message, 'Internet connection error');

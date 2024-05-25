@@ -4,6 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Utils {
+  // change the focuss Node
+  static void changeFocussNode(
+      BuildContext context, FocusNode currentNode, FocusNode nextNode) {
+    currentNode.unfocus();
+    FocusScope.of(context).requestFocus(nextNode);
+  }
+
   static toastMessage(String message) {
     Fluttertoast.showToast(msg: message);
   }
