@@ -13,5 +13,15 @@ class Auth_repository {
     } catch (e) {
       print(e);
     }
+  } 
+
+    Future<dynamic> RegistryApi(dynamic data) async {
+    try {
+      dynamic response =
+          await _apiResponse.getPostApiResponse(AppUrl.RegisterEndPoint, data);
+      return response;
+    } catch (e) {
+      print(e);
+    }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:nvvm/res/Component/round_button.dart';
+import 'package:nvvm/utis/Route/RoutesNames.dart';
 import 'package:nvvm/utis/utis.dart';
 import 'package:nvvm/view_model/authViewModel.dart';
 import 'package:provider/provider.dart';
@@ -39,6 +40,10 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              const Text(
+                'Login Screen',
+                style: TextStyle(fontSize: 33, fontWeight: FontWeight.bold),
+              ),
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 focusNode: emailFocusNode,
@@ -67,11 +72,11 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Icon(_obsecureValue.value
                                   ? Icons.visibility_off
                                   : Icons.visibility)),
-                          label: Text('Password')),
+                          label: const Text('Password')),
                     );
                   }),
               SizedBox(
-                height: height * .1,
+                height: height * .03,
               ),
               RoundBtn(
                   title: 'login',
@@ -94,7 +99,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       authprovider.loginScreen(data, context);
                       print('Api hit ');
                     }
-                  })
+                  }),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, RoutesName.signUp);
+                  },
+                  child: Text("Don't have an account? Sign up "))
             ]),
       ),
     );
