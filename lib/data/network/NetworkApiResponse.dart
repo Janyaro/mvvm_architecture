@@ -30,12 +30,13 @@ class NetWorkApiResponse extends BaseApiResponse {
     } on SocketException {
       throw FetchDataException('Data does not found');
     }
+    return ResponseJson;
   }
 
   dynamic returnResponse(http.Response response) {
     switch (response.statusCode) {
       case 200:
-        dynamic ResponseJson = jsonDecode(response.body);
+        dynamic ResponseJson = jsonDecode(response.body.toString());
         return ResponseJson;
         break;
       case 400:

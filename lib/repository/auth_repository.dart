@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:nvvm/data/network/BaseApiResponse.dart';
 import 'package:nvvm/data/network/NetworkApiResponse.dart';
 import 'package:nvvm/res/app_url.dart';

@@ -92,11 +92,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       Utils.flushBarErrorMessage(
                           'please Enter Right email address', context);
                     } else {
+                      // Map data = {
+                      //   'email': emailController.text.toString(),
+                      //   'password': passwordController.text.toString()
+                      // };
                       Map data = {
-                        'email': emailController.text.toString(),
-                        'password': passwordController.text.toString()
+                        'email': 'eve.holt@reqres.in',
+                        'password': 'cityslicka'
                       };
                       authprovider.loginScreen(data, context);
+
                       print('Api hit ');
                     }
                   }),
