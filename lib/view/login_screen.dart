@@ -93,8 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           'please Enter Right email address', context);
                     } else {
                       Map data = {
-                        'email': emailController,
-                        'password': passwordController
+                        'email': emailController.text.toString(),
+                        'password': passwordController.text.toString()
                       };
                       authprovider.loginScreen(data, context);
                       print('Api hit ');

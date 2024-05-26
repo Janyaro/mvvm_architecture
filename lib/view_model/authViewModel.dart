@@ -53,10 +53,8 @@ class AuthViewProvider with ChangeNotifier {
       print(value.toString());
     }).onError((error, stackTrace) {
       setSignUpLoading(false);
-      if (kDebugMode) {
-        Utils.SnackBar(error.toString(), context);
-        print(error.toString());
-      }
+      Utils.SnackBar(error.toString(), context);
+      print(error.toString());
     });
   }
 }
